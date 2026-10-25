@@ -24,8 +24,8 @@ public class RyanClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-          KeyBinding.Category category = KeyBinding.Category.create(
-                "key.category.ryanclient");
+         KeyBinding.MISC_CATEGORY
+             
 
         openMenuKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.ryanclient.open_menu", InputUtil.Type.KEYSYM,
