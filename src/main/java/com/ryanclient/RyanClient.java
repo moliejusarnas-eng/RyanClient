@@ -24,18 +24,21 @@ public class RyanClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+          KeyBinding.Category category = KeyBinding.Category.create(
+                "key.category.ryanclient");
+
         openMenuKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.ryanclient.open_menu", InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_O, KeyBinding.Category.MISC));
+                GLFW.GLFW_KEY_O, category));
         triggerToggleKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.ryanclient.triggerbot", InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_R, KeyBinding.Category.MISC));
+                GLFW.GLFW_KEY_R, category));
         aimToggleKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.ryanclient.aimassist", InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_F, KeyBinding.Category.MISC));
+                GLFW.GLFW_KEY_F, category));
         rotationToggleKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.ryanclient.rotation_diagnostics", InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_U, KeyBinding.Category.MISC));
+                GLFW.GLFW_KEY_U, category));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openMenuKey.wasPressed()) {
